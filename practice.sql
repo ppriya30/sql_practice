@@ -67,15 +67,7 @@ inner join customer c
 on s.salesman_id=c.salesman_id
 where s.city != c.city AND s.commission > 0.12;
 
-select c.cust_name as 'Customer Name',
-c.city as 'Customer City',
-s.name as 'Salesman',
-s.city as 'Salesman City',
-s.commission
-from salesman s
-inner join customer c
-on s.salesman_id=c.salesman_id
-where (select salesman.city,customer.city from salesman,customer where salesman.city != customer.city) AND s.commission > 0.12;
+
 
 
 
